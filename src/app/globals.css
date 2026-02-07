@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-cream text-text-dark font-body antialiased;
+    letter-spacing: 0.01em;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer utilities {
+  .animate-delay-100 { animation-delay: 100ms; }
+  .animate-delay-200 { animation-delay: 200ms; }
+  .animate-delay-300 { animation-delay: 300ms; }
+  .animate-delay-400 { animation-delay: 400ms; }
+  .animate-delay-500 { animation-delay: 500ms; }
+  .animate-fill-both { animation-fill-mode: both; }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-block px-8 py-4 bg-text-dark text-cream font-body font-medium uppercase tracking-[0.2em]
+           hover:bg-dark-beige hover:-translate-y-0.5 transition-all duration-300;
+  }
+  .btn-secondary {
+    @apply inline-block px-8 py-4 border-2 border-text-dark/30 text-text-dark font-body font-medium uppercase tracking-[0.2em]
+           hover:bg-text-dark hover:text-cream hover:border-text-dark hover:-translate-y-0.5 transition-all duration-300;
+  }
+}
