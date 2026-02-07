@@ -49,8 +49,9 @@ export default function ProductCard({ product }: ProductCardProps) {
         <RazorpayCheckout
           product={product}
           className="btn-primary flex-1 py-3 text-sm"
-          children="Buy Now"
-        />
+        >
+          Buy Now
+        </RazorpayCheckout>
         <a
           href={whatsappHref}
           target="_blank"
