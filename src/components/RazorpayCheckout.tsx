@@ -155,7 +155,9 @@ export default function RazorpayCheckout({
   );
 
   const handleBuyClick = () => {
+    console.log('Razorpay Key ID:', config.razorpay.keyId ? 'Set' : 'Missing');
     if (!config.razorpay.keyId) {
+      console.warn('Razorpay key not found - redirecting to WhatsApp');
       window.open(
         config.whatsapp.getHrefWithMessage(`Hi! I'm interested in ${product.name}`),
         '_blank'

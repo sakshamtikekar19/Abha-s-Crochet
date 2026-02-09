@@ -1,6 +1,9 @@
-import type { Config } from 'tailwindcss';
-
-const config: Config = {
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  safelist: [
+    'bg-cream', 'text-cream', 'text-text-dark', 'text-text-light',
+    'bg-text-dark', 'bg-dark-beige', 'font-heading', 'font-body',
+  ],
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -43,11 +46,9 @@ const config: Config = {
         display: ['var(--font-display)', 'cursive'],
       },
       fontSize: {
-        'display': ['3.5rem', { lineHeight: '1.1' }],
+        display: ['3.5rem', { lineHeight: '1.1' }],
       },
     },
   },
   plugins: [],
 };
-
-export default config;

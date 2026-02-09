@@ -26,10 +26,14 @@ export async function POST(request: NextRequest) {
       key_secret: keySecret,
     });
 
+    // Receipt must be max 40 characters
+    const receiptId = String(product_id || Date.now()).slice(0, 32);
+    const receipt = `cr_${receiptId}`;
+
     const order = await razorpay.orders.create({
       amount: amount_paise,
       currency,
-      receipt: `crochet_${product_id || Date.now()}`,
+      receipt,
       notes: product_name ? { product: product_name } : undefined,
     });
 
